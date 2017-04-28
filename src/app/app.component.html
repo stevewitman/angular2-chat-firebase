@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+  {{ title }}
+</md-toolbar>
+<div class="input">
+  <div *ngFor="let message of messages | async">
+    {{ message.message }} - by {{ message.author }}
+  </div>
+</div>
+<div>
+  <input placeholder="author" #author>
+  <input placeholder="message" #message style="flex-grow:1">
+  <button type="button" (click)="send(author, message)">Send</button>
+</div>
